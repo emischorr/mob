@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f5f9fb;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  display: flex;
+}
+
+section.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+  }
+}
+
+.container {
+  max-width: none;
+  padding: 0 7rem;
+}

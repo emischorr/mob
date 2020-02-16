@@ -1,0 +1,22 @@
+/* This file is for your main application css. */
+@import "variables";
+
+@import "./phoenix.css";
+@import "../../deps/phoenix_live_view/assets/css/live_view.css";
+@import "~chartist/dist/scss/chartist.scss";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+
+$red: #e66f6f;
+$orange: #fe7328;
+$green: #7acc5a;
+$yellow: #ffc539;
+$blue: #0bbaf4;
+
+@import "./layout.scss";
+@import "./forms.scss";
+@import "./sidebar.scss";
+@import "./group.scss";

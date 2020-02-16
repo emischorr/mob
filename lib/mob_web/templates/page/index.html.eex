@@ -1,0 +1,27 @@
+<section class="header">
+  <h2>Dashboard</h2>
+  <div class="actions">
+    <a id="new-group-button" class="btn">New group<i class="fas fa-plus"></i></a>
+  </div>
+</section>
+
+<%= form_for @conn, Routes.page_path(@conn, :create), [as: :group, id: "new-group-form", style: "display:none;"], fn f -> %>
+
+  <div class="form-group half">
+    <%= label f, :name, "Group Name" %>
+    <%= text_input f, :name %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group half">
+    <%= label f, :url %>
+    <%= text_input f, :url %>
+    <%= error_tag f, :url %>
+  </div>
+
+  <div>
+    <%= submit "Create" %>
+  </div>
+<% end %>
+
+<%= live_render(@conn, MobWeb.LiveDashboard) %>
