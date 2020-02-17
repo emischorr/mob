@@ -22,6 +22,8 @@ defmodule Mob.Application do
       # {Horde.DynamicSupervisor, [name: HelloWorld.HelloSupervisor, strategy: :one_for_one]},
       {Mob.Cluster.NodeListener, []},
       supervisor(Task.Supervisor, [[name: Mob.TaskSupervisor]]),
+      #timeout is the time we keep the connection alive in the pool, max_connections is the number of connections maintained in the pool. Each connection in a pool is monitored and closed connections are removed automatically.
+      :hackney_pool.child_spec(:mob_pool, [timeout: 15000, max_connections: 1000])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
