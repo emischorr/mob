@@ -27,8 +27,10 @@ defmodule Mob.MixProject do
   defp releases do
     [
       mob: [
+        version: "0.1.1",
         include_executables_for: [:unix],
-        applications: [runtime_tools: :permanent]
+        applications: [runtime_tools: :permanent],
+        cookie: "ingodwetrust"
       ]
     ]
   end
@@ -51,7 +53,7 @@ defmodule Mob.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:httpoison, "~> 0.10.0"},
+      {:httpoison, "~> 1.6.2"},
       {:libcluster, "~> 3.2"},
       {:horde, "~> 0.7.1"}
     ]
