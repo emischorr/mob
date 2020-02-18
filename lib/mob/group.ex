@@ -30,6 +30,10 @@ defmodule Mob.Group do
     end
   end
 
+  def stop(name) do
+    GenServer.stop(via_tuple(name))
+  end
+
 
   # Server (Callbacks)
 

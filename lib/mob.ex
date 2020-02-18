@@ -9,6 +9,12 @@ defmodule Mob do
     Group.start_link(name, url)
   end
 
+  def remove_group(name) do
+    Group.size(name, 0)
+    Group.stop(name)
+    Metric.stop(name)
+  end
+
   def group_names() do
     Horde.Registry.select(Mob.Registry, [{{:"$1", :_, :_}, [], [:"$1"]}])
     |> Enum.filter(&(String.starts_with?(&1, "group_")))
@@ -22,6 +28,11 @@ defmodule Mob do
   def metrics(name) do
     Metric.list(name)
     # m.slots |> Enum.map(&( put_in(elem(&1,1), [:requests, :mean_time], elem(&1,1).requests.total_time / elem(&1,1).requests.number) ))
+  end
+
+  def reset_metrics(name) do
+    Metric.stop(name)
+    Metric.start_link(name)
   end
 
 end

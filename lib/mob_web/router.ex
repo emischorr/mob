@@ -19,6 +19,8 @@ defmodule MobWeb.Router do
 
     get "/", PageController, :index
     post "/group", PageController, :create
+    get "/group/:id/reset", PageController, :reset
+    delete "/group/:id", PageController, :delete
   end
 
   # Other scopes may use custom stacks.

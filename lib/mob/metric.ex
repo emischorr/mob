@@ -31,6 +31,10 @@ defmodule Mob.Metric do
     end
   end
 
+  def stop(group) do
+    GenServer.stop(via_tuple(group))
+  end
+
 
   # Server (Callbacks)
 

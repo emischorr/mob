@@ -13,7 +13,10 @@ defmodule MobWeb.LiveGroup do
           <h3><%= @name %></h3>
           <div class="url"><i class="fas fa-fw fa-link"></i><a href="<%= @url %>"><%= @url %></a></div>
         </div>
-        <div class="actions"><i class="fas fa-trash"></i></div>
+        <div class="actions">
+          <%= link to: "/group/#{@name}/reset" do %><i class="fas fa-toilet"></i><% end %>
+          <%= link to: "/group/#{@name}", method: :delete do %><i class="fas fa-trash"></i><% end %>
+        </div>
         <div class="control">
           <i class="fas fa-fw fa-users"></i><%= @size %>
           <output phx-update="ignore" for="<%= html_id(@name) %>-size">
