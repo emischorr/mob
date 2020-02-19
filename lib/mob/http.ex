@@ -1,7 +1,12 @@
 defmodule Mob.Http do
   use HTTPoison.Base
 
-  @default_options [ssl: [{:verify, :verify_none}], follow_redirect: true, max_redirect: 5, "User-Agent": "flash-mob", hackney: [pool: :mob_pool, headers: [{"User-Agent", "flash-mob"}]]]
+  @default_options [
+    timeout: 10000, recv_timeout: 10000,
+    follow_redirect: true, max_redirect: 5,
+    ssl: [{:verify, :verify_none}], "User-Agent": "flash-mob",
+    hackney: [pool: :mob_pool, headers: [{"User-Agent", "flash-mob"}]]
+  ]
 
   def request(atom, url, body, headers, options) do
     # TODO: use hackney metrics
