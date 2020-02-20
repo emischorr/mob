@@ -1,3 +1,6 @@
 ## Increase number of concurrent ports/sockets
 ##-env ERL_MAX_PORTS 65536
 +Q 65536
++K true
++P 2000000
++A 10

@@ -60,7 +60,6 @@ defmodule Mob.Group do
       if (state.size > 0) do
         1..state.size
         |> Enum.map(fn x -> Task.Supervisor.async({Mob.TaskSupervisor, Mob.Cluster.random_node}, Mob.Action, :process, [state.name, state.url]) end)
-        #|> Enum.map(fn x -> Task.Supervisor.async({Mob.TaskSupervisor, Mob.random_node}, fn -> process(state.name, state.url) end) end)
         #|> Enum.map(&( Task.await(&1) ))
         #|> IO.inspect
       end
